@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.desk-widgets" path="/org/gnome/shell/extensions/desk-widgets/">
+    <key name="positions" type="a{s(ii)}">
+      <default>{}</default>
+      <summary>Widget id to (column from right, row). Empty means default layout.</summary>
+    </key>
+    <key name="hidden" type="as">
+      <default>[]</default>
+      <summary>Ids of hidden widgets</summary>
+    </key>
+    <key name="calendar-size" type="s">
+      <choices><choice value="small"/><choice value="medium"/></choices>
+      <default>'small'</default>
+    </key>
+    <key name="quote-mode" type="s">
+      <choices><choice value="quotes"/><choice value="tips"/><choice value="alternate"/></choices>
+      <default>'alternate'</default>
+    </key>
+    <key name="market-symbols" type="as">
+      <default>['^NSEI','^BSESN','USD/INR','EUR/INR']</default>
+    </key>
+    <key name="habit-names" type="as">
+      <default>['Read','Workout','Code']</default>
+    </key>
+    <key name="clipboard-enabled" type="b">
+      <default>true</default>
+    </key>
+    <key name="clipboard-clear" type="i">
+      <default>0</default>
+      <summary>Bumped by Settings to ask the clipboard widget to forget its history.</summary>
+    </key>
+  </schema>
+</schemalist>

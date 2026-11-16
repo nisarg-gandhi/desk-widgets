@@ -1,0 +1,497 @@
+[
+ {
+  "text": "git: `git switch -` jumps back to the branch you were on before, like `cd -`."
+ },
+ {
+  "text": "git: `git commit --fixup <sha>` then `git rebase -i --autosquash` folds a fix into an older commit."
+ },
+ {
+  "text": "git: `git log -S\"text\"` finds the commits that added or removed that exact string."
+ },
+ {
+  "text": "git: `git bisect run <test-cmd>` finds the commit that broke a test automatically."
+ },
+ {
+  "text": "git: `git stash -u` also stashes untracked files; plain `git stash` leaves them behind."
+ },
+ {
+  "text": "git: `git reflog` remembers where HEAD has been. Most \"lost\" commits can be recovered from it."
+ },
+ {
+  "text": "git: `git add -p` stages changes hunk by hunk, so each commit says one thing."
+ },
+ {
+  "text": "git: `git diff --staged` shows exactly what the next commit will contain."
+ },
+ {
+  "text": "git: `git restore --source=<sha> -- path` brings back one file from an old commit."
+ },
+ {
+  "text": "git: `git worktree add ../fix main` checks out a second branch in another folder, no stashing."
+ },
+ {
+  "text": "git: `git blame -w -C` ignores whitespace and follows code moved between files."
+ },
+ {
+  "text": "git: `git log --oneline --graph --all` draws the whole branch structure in the terminal."
+ },
+ {
+  "text": "git: `git push --force-with-lease` refuses to overwrite work you have not seen. Prefer it to --force."
+ },
+ {
+  "text": "git: `git commit --amend --no-edit` adds staged changes to the last commit, keeping its message."
+ },
+ {
+  "text": "git: `git cherry-pick -x <sha>` records where the commit came from in the message."
+ },
+ {
+  "text": "git: `git clean -nd` previews what `git clean -fd` would delete. Always preview first."
+ },
+ {
+  "text": "git: `git shortlog -sn` counts commits per author."
+ },
+ {
+  "text": "git: `git rebase --onto new old branch` moves a branch from one base to another."
+ },
+ {
+  "text": "git: `git show <sha>:path/to/file` prints a file as it was at that commit."
+ },
+ {
+  "text": "git: `git config --global rerere.enabled true` remembers how you resolved a conflict and reuses it."
+ },
+ {
+  "text": "git: Write commit subjects in the imperative: \"Fix login timeout\", not \"Fixed\" or \"Fixes\"."
+ },
+ {
+  "text": "git: `git grep -n pattern` searches tracked files only and is usually faster than plain grep."
+ },
+ {
+  "text": "git: `git log --follow -- file` keeps history across renames."
+ },
+ {
+  "text": "git: `git diff --word-diff` shows changes word by word, handy for prose and long lines."
+ },
+ {
+  "text": "git: `git branch --merged` lists branches that are safe to delete."
+ },
+ {
+  "text": "Shell: `set -euo pipefail` at the top of a bash script stops it on errors, unset variables and failed pipes."
+ },
+ {
+  "text": "Shell: Ctrl+R searches command history as you type. Press it again for the previous match."
+ },
+ {
+  "text": "Shell: `!!` repeats the last command, so `sudo !!` reruns it as root."
+ },
+ {
+  "text": "Shell: `!$` expands to the last argument of the previous command."
+ },
+ {
+  "text": "Shell: Alt+. pastes the last argument of the previous command at the cursor."
+ },
+ {
+  "text": "Shell: Always quote variables: `\"$file\"` survives spaces, `$file` does not."
+ },
+ {
+  "text": "Shell: `cd -` returns to the previous directory."
+ },
+ {
+  "text": "Shell: `xargs -P4 -n1` runs four jobs in parallel, one argument each."
+ },
+ {
+  "text": "Shell: `tee` writes to a file and the screen at once: `make 2>&1 | tee build.log`."
+ },
+ {
+  "text": "Shell: `command -v name` checks whether a program exists; it is more portable than `which`."
+ },
+ {
+  "text": "Shell: `mktemp -d` makes a safe temporary directory; clean it up with `trap 'rm -rf \"$d\"' EXIT`."
+ },
+ {
+  "text": "Shell: `diff <(cmd1) <(cmd2)` compares the output of two commands without temp files."
+ },
+ {
+  "text": "Shell: `sort | uniq -c | sort -rn` turns a list into a ranked count of its values."
+ },
+ {
+  "text": "Shell: `less +F file` follows a log like `tail -f`; Ctrl+C lets you scroll, F resumes."
+ },
+ {
+  "text": "Shell: `Ctrl+Z`, then `bg` and `disown`, keeps a running job alive after you close the terminal."
+ },
+ {
+  "text": "Shell: `\"${var:-default}\"` uses a default when the variable is unset or empty."
+ },
+ {
+  "text": "Shell: `find . -name '*.log' -mtime +7 -delete` removes logs older than a week. Run it without -delete first."
+ },
+ {
+  "text": "Shell: `rsync -a --dry-run src/ dst/` shows what would be copied. The trailing slash on src matters."
+ },
+ {
+  "text": "Shell: `watch -n 2 cmd` reruns a command every two seconds and shows the latest output."
+ },
+ {
+  "text": "Shell: `column -t` lines up whitespace-separated output into a readable table."
+ },
+ {
+  "text": "Shell: `jq '.items[] | .name'` pulls fields out of JSON; `jq .` just pretty-prints it."
+ },
+ {
+  "text": "Shell: `shellcheck script.sh` catches quoting and logic mistakes before they bite."
+ },
+ {
+  "text": "Shell: `time cmd` shows how long a command took; `hyperfine` compares two commands properly."
+ },
+ {
+  "text": "Shell: `[[ ... ]]` is safer than `[ ... ]` in bash: no word splitting, and it supports `&&` and regex."
+ },
+ {
+  "text": "Shell: `cut -d, -f2` picks the second comma-separated field; `awk -F, '{print $2}'` does the same."
+ },
+ {
+  "text": "Debugging: Reproduce the bug reliably before changing anything. A fix you cannot test is a guess."
+ },
+ {
+  "text": "Debugging: Change one thing at a time. Two changes at once hide which one mattered."
+ },
+ {
+  "text": "Debugging: Read the whole error message, including the first line of the stack trace, before searching."
+ },
+ {
+  "text": "Debugging: Explain the problem out loud, line by line. The gap in your reasoning often shows itself."
+ },
+ {
+  "text": "Debugging: Check your assumptions with a print or an assert. The bug lives where you did not look."
+ },
+ {
+  "text": "Debugging: Binary search the problem: halve the input, the code path or the commit range each step."
+ },
+ {
+  "text": "Debugging: When a fix works, find out why. An unexplained fix is a bug waiting to return."
+ },
+ {
+  "text": "Debugging: Write the failing test first. It proves the bug exists and later proves it is gone."
+ },
+ {
+  "text": "Debugging: If it worked yesterday, ask what changed: code, data, dependencies, config or environment."
+ },
+ {
+  "text": "Debugging: Log the inputs at the boundary where good data turns bad. The fault is just before it."
+ },
+ {
+  "text": "Debugging: A flaky test is usually a real bug in ordering, time or shared state. Do not just retry it."
+ },
+ {
+  "text": "Debugging: Check the simple things first: is it plugged in, saved, deployed, and the right branch?"
+ },
+ {
+  "text": "Debugging: Make the smallest example that still fails. Most bugs are obvious at that size."
+ },
+ {
+  "text": "Debugging: Timestamps and request IDs in logs turn a pile of lines into a story you can follow."
+ },
+ {
+  "text": "Debugging: Take a break when stuck. Fresh eyes find in minutes what tired eyes miss for hours."
+ },
+ {
+  "text": "Python: `breakpoint()` drops into the debugger at that line. No import needed."
+ },
+ {
+  "text": "Python: `python -m venv .venv` gives each project its own packages. Never install into the system Python."
+ },
+ {
+  "text": "Python: f-strings can debug: `f\"{value=}\"` prints both the name and the value."
+ },
+ {
+  "text": "Python: `enumerate(items, start=1)` replaces manual counters in loops."
+ },
+ {
+  "text": "Python: `with open(path) as f:` closes the file even if an exception is raised."
+ },
+ {
+  "text": "Python: `collections.Counter(words).most_common(3)` counts and ranks in one line."
+ },
+ {
+  "text": "Python: `dict.get(key, default)` avoids a KeyError when the key may be missing."
+ },
+ {
+  "text": "Python: Never use a mutable default argument like `def f(x=[])`. Use `None` and create it inside."
+ },
+ {
+  "text": "Python: `pathlib.Path` beats string paths: `Path.home() / \"data\" / \"file.csv\"`."
+ },
+ {
+  "text": "Python: `zip(a, b, strict=True)` raises if the lists differ in length instead of silently truncating."
+ },
+ {
+  "text": "Python: `python -m http.server 8000` serves the current folder over HTTP for quick sharing."
+ },
+ {
+  "text": "Python: `python -X importtime app.py` shows which imports make startup slow."
+ },
+ {
+  "text": "Python: `is` compares identity, `==` compares value. Use `is` only for `None`, `True` and `False`."
+ },
+ {
+  "text": "Python: `@functools.lru_cache` memoizes a pure function with one line."
+ },
+ {
+  "text": "Python: `any(x > 5 for x in xs)` stops at the first match; no need to build a list."
+ },
+ {
+  "text": "Python: `python -m timeit \"expr\"` measures small snippets more reliably than a stopwatch."
+ },
+ {
+  "text": "Python: `dataclasses.dataclass` writes `__init__`, `__repr__` and `__eq__` for you."
+ },
+ {
+  "text": "Python: `pip freeze > requirements.txt` records exact versions so others can reproduce your setup."
+ },
+ {
+  "text": "Python: `sorted(items, key=lambda x: (x.group, -x.score))` sorts by several fields at once."
+ },
+ {
+  "text": "Python: Catch specific exceptions. A bare `except:` also hides typos and Ctrl+C."
+ },
+ {
+  "text": "Python: `python -i script.py` runs the script, then leaves you in a shell with its variables."
+ },
+ {
+  "text": "Python: `itertools.batched(items, 100)` splits work into chunks (Python 3.12+)."
+ },
+ {
+  "text": "Python: `str.removeprefix(\"v\")` is clearer than slicing or `lstrip`, which strips characters, not a prefix."
+ },
+ {
+  "text": "Python: `json.dumps(obj, indent=2, sort_keys=True)` makes output stable and diff-friendly."
+ },
+ {
+  "text": "Python: `if __name__ == \"__main__\":` lets a file be both a script and an importable module."
+ },
+ {
+  "text": "JavaScript: `===` compares without type coercion. Use it by default; `==` has surprising rules."
+ },
+ {
+  "text": "JavaScript: `const` by default, `let` when you must reassign, never `var`."
+ },
+ {
+  "text": "JavaScript: `a ?? b` falls back only on null or undefined; `a || b` also replaces 0 and \"\"."
+ },
+ {
+  "text": "JavaScript: `obj?.user?.name` returns undefined instead of throwing when a link is missing."
+ },
+ {
+  "text": "JavaScript: `console.table(rows)` prints an array of objects as a sortable table."
+ },
+ {
+  "text": "JavaScript: `await Promise.all([a(), b()])` runs both at once; two awaits in a row run one after the other."
+ },
+ {
+  "text": "JavaScript: `structuredClone(obj)` makes a real deep copy, unlike the spread operator."
+ },
+ {
+  "text": "JavaScript: `array.at(-1)` reads the last element without `length - 1`."
+ },
+ {
+  "text": "JavaScript: `Promise.allSettled` waits for every promise and reports each result, even failures."
+ },
+ {
+  "text": "JavaScript: `for...of` iterates values; `for...in` iterates keys, including inherited ones."
+ },
+ {
+  "text": "JavaScript: `Object.entries(obj)` lets you loop or map over keys and values together."
+ },
+ {
+  "text": "JavaScript: `Number.isNaN(x)` is exact; the global `isNaN(\"abc\")` coerces first and misleads."
+ },
+ {
+  "text": "JavaScript: `debugger;` pauses in DevTools at that line when the tools are open."
+ },
+ {
+  "text": "JavaScript: An `async` function always returns a promise. Forgetting `await` gives you the promise, not the value."
+ },
+ {
+  "text": "JavaScript: `[...new Set(items)]` removes duplicates from an array."
+ },
+ {
+  "text": "JavaScript: `AbortController` cancels a `fetch`, so stale requests cannot overwrite fresh data."
+ },
+ {
+  "text": "JavaScript: `toSorted()` and `toReversed()` return new arrays; `sort()` and `reverse()` change the original."
+ },
+ {
+  "text": "JavaScript: `0.1 + 0.2 !== 0.3`. Compare floats with a tolerance, and keep money in integer cents."
+ },
+ {
+  "text": "JavaScript: `console.time(\"x\")` and `console.timeEnd(\"x\")` measure a block without a profiler."
+ },
+ {
+  "text": "JavaScript: `Intl.NumberFormat` and `Intl.DateTimeFormat` format for any locale without a library."
+ },
+ {
+  "text": "SQL: Run `EXPLAIN` before optimizing. The plan shows whether an index is actually used."
+ },
+ {
+  "text": "SQL: `NULL = NULL` is not true. Use `IS NULL` and `IS NOT NULL`."
+ },
+ {
+  "text": "SQL: Always use parameterized queries. Never build SQL by joining strings with user input."
+ },
+ {
+  "text": "SQL: `COUNT(*)` counts rows; `COUNT(column)` skips NULLs. They can give different answers."
+ },
+ {
+  "text": "SQL: Filter rows with `WHERE` before grouping; filter groups with `HAVING` after."
+ },
+ {
+  "text": "SQL: An index on (a, b) helps queries on `a` and on `a, b`, but not on `b` alone."
+ },
+ {
+  "text": "SQL: Wrap related writes in a transaction so they all succeed or all roll back."
+ },
+ {
+  "text": "SQL: `SELECT *` breaks when columns change and fetches more than you need. Name the columns."
+ },
+ {
+  "text": "SQL: A `LEFT JOIN` filtered in `WHERE` on the right table quietly becomes an inner join. Filter in `ON`."
+ },
+ {
+  "text": "SQL: `LIMIT` without `ORDER BY` returns rows in no guaranteed order."
+ },
+ {
+  "text": "SQL: Test a `DELETE` or `UPDATE` by running its `WHERE` clause as a `SELECT` first."
+ },
+ {
+  "text": "SQL: Window functions like `ROW_NUMBER() OVER (PARTITION BY ...)` rank rows without collapsing them."
+ },
+ {
+  "text": "SQL: `COALESCE(a, b, 0)` returns the first value that is not NULL."
+ },
+ {
+  "text": "SQL: Store times in UTC and convert when displaying. Local times break twice a year."
+ },
+ {
+  "text": "SQL: `NOT IN` with a NULL in the list matches nothing. Prefer `NOT EXISTS`."
+ },
+ {
+  "text": "Network: `curl -v` shows the request, the response headers and the TLS handshake."
+ },
+ {
+  "text": "Network: `ss -tlnp` lists listening TCP ports and the process that owns each."
+ },
+ {
+  "text": "Network: `dig +short example.com` returns just the DNS answer."
+ },
+ {
+  "text": "Network: HTTP 401 means \"who are you?\"; 403 means \"I know you, and no\"."
+ },
+ {
+  "text": "Network: HTTP 502 and 504 come from a proxy that could not reach or wait for the server behind it."
+ },
+ {
+  "text": "Network: `curl -w \"%{time_total}\\n\" -o /dev/null -s URL` times a request."
+ },
+ {
+  "text": "Network: `nc -zv host 443` checks whether a port is reachable without sending real data."
+ },
+ {
+  "text": "Network: `ip -br a` gives a compact list of interfaces and addresses."
+ },
+ {
+  "text": "Network: `localhost` may resolve to IPv6 `::1`. If a service binds only to 127.0.0.1, that can fail."
+ },
+ {
+  "text": "Network: `0.0.0.0` listens on every interface; `127.0.0.1` is reachable only from the same machine."
+ },
+ {
+  "text": "Network: `traceroute` or `mtr` shows at which hop packets start getting lost."
+ },
+ {
+  "text": "Network: A TCP \"connection refused\" means nothing is listening; a timeout means something dropped the packet."
+ },
+ {
+  "text": "Network: `ssh -L 8080:localhost:80 host` forwards a remote port to your machine."
+ },
+ {
+  "text": "Network: `ssh -J jump host` reaches a machine behind a bastion in one command."
+ },
+ {
+  "text": "Network: Idempotent requests (GET, PUT, DELETE) are safe to retry; POST usually is not."
+ },
+ {
+  "text": "Linux: `journalctl -u name -f` follows the logs of one systemd service."
+ },
+ {
+  "text": "Linux: `df -h` shows free disk space; `du -sh *` shows which folders use it."
+ },
+ {
+  "text": "Linux: `htop` sorts by CPU or memory with one key and can kill a process in place."
+ },
+ {
+  "text": "Linux: `lsof -i :3000` shows what is using port 3000."
+ },
+ {
+  "text": "Linux: `chmod +x file` makes a script runnable; the `#!` line picks its interpreter."
+ },
+ {
+  "text": "Linux: `systemctl --failed` lists services that did not start."
+ },
+ {
+  "text": "Linux: `ln -s target link` makes a symlink. Note the order: the existing thing comes first."
+ },
+ {
+  "text": "Linux: `strace -f -e trace=file cmd` shows which files a program tries to open."
+ },
+ {
+  "text": "Linux: `free -h` counts cache as used. Look at the \"available\" column for real headroom."
+ },
+ {
+  "text": "Linux: `kill -TERM` asks a process to exit cleanly; `kill -9` gives it no chance to clean up."
+ },
+ {
+  "text": "Craft: Name things for what they mean, not how they are built. `activeUsers` beats `filteredList2`."
+ },
+ {
+  "text": "Craft: Delete dead code. Version control remembers it; readers should not have to."
+ },
+ {
+  "text": "Craft: A comment should say why. The code already says what."
+ },
+ {
+  "text": "Craft: Make a change easy, then make the easy change."
+ },
+ {
+  "text": "Craft: Small pull requests get real reviews. Large ones get \"looks good to me\"."
+ },
+ {
+  "text": "Craft: Handle the error where you can do something about it. Otherwise let it travel upward."
+ },
+ {
+  "text": "Craft: Read the docs for five minutes before guessing for an hour."
+ },
+ {
+  "text": "Craft: Automate a task the third time you do it by hand, not the first."
+ },
+ {
+  "text": "Craft: Keep functions short enough to see whole. If you must scroll, it probably does two jobs."
+ },
+ {
+  "text": "Craft: Prefer boring technology for the parts of the system that must not fail."
+ },
+ {
+  "text": "Craft: Measure before optimizing. The slow part is rarely where you think it is."
+ },
+ {
+  "text": "Craft: Pin dependency versions. \"Latest\" is a different thing every day."
+ },
+ {
+  "text": "Craft: Never commit secrets. Rotate any key that has ever touched a repository."
+ },
+ {
+  "text": "Craft: Back up, then test the restore. An untested backup is only a hope."
+ },
+ {
+  "text": "Craft: Leave the code a little cleaner than you found it."
+ }
+]

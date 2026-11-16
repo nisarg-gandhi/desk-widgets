@@ -1,0 +1,10 @@
+{
+  "uuid": "desk-widgets@nisarg-gandhi.github.io",
+  "name": "Desk Widgets",
+  "description": "Calm, Mac-style widgets on the desktop: calendar, system stats, daily quote, markets, habits, notes and clipboard.",
+  "shell-version": [
+    "50"
+  ],
+  "settings-schema": "org.gnome.shell.extensions.desk-widgets",
+  "url": "https://github.com/nisarg-gandhi/desk-widgets"
+}

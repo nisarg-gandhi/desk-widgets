@@ -1,0 +1,119 @@
+/* Desk Widgets — Mac-style cards on the desktop. Sizes are logical pixels. */
+
+.dw-card {
+    border-radius: 22px;
+    background-color: rgba(28, 28, 30, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    color: rgba(255, 255, 255, 0.92);
+    font-family: Inter, "Ubuntu Sans", Ubuntu, sans-serif;
+    font-size: 13px;
+}
+.dw-card:active { background-color: rgba(44, 44, 46, 0.82); }
+.dw-content { padding: 16px; }
+
+.dw-primary { color: rgba(255, 255, 255, 0.92); }
+.dw-secondary { color: rgba(255, 255, 255, 0.55); }
+.dw-caption { color: rgba(255, 255, 255, 0.55); font-size: 11px; font-weight: 600; }
+
+.dw-light .dw-card {
+    background-color: rgba(245, 245, 247, 0.78);
+    border-color: rgba(0, 0, 0, 0.08);
+    color: rgba(0, 0, 0, 0.92);
+}
+.dw-light .dw-card:active { background-color: rgba(232, 232, 237, 0.88); }
+.dw-light .dw-primary { color: rgba(0, 0, 0, 0.92); }
+.dw-light .dw-secondary, .dw-light .dw-caption { color: rgba(0, 0, 0, 0.55); }
+
+/* Calendar */
+.dw-cal-weekday { color: #ff453a; font-size: 13px; font-weight: 600; }
+.dw-cal-day { font-size: 60px; font-weight: 300; }
+.dw-cal-month { font-size: 13px; }
+.dw-cal-grid { margin-left: 8px; }
+.dw-cal-head { font-size: 10px; font-weight: 600; color: rgba(255, 255, 255, 0.55); }
+.dw-cal-cell { font-size: 11px; width: 18px; height: 18px; border-radius: 9px; text-align: center; }
+.dw-cal-today { background-color: #ff453a; color: #ffffff; font-weight: 600; }
+.dw-light .dw-cal-head { color: rgba(0, 0, 0, 0.55); }
+.dw-light .dw-cal-today { color: #ffffff; }
+
+/* System stats */
+.dw-stats .dw-content { padding: 14px 12px 12px 12px; }
+.dw-stats-value { font-size: 13px; font-weight: 600; }
+.dw-stats-footer { font-size: 11px; }
+
+/* Habits */
+.dw-habits-rows { spacing: 6px; }
+.dw-habits-row { spacing: 8px; }
+.dw-habits-name { font-size: 14px; padding: 1px 0; }
+.dw-habits-name:hover { color: #ff9f0a; }
+.dw-habits-footer { font-size: 11px; }
+.dw-dot {
+    width: 12px; height: 12px; border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.22);
+    background-color: transparent;
+}
+.dw-dot-done { background-color: #ff9f0a; border-color: #ff9f0a; }
+.dw-dot-today { border-color: #ff9f0a; }
+.dw-dot-today:hover { background-color: rgba(255, 159, 10, 0.35); }
+.dw-dot-done.dw-dot-today:hover { background-color: #ffb340; }
+.dw-light .dw-dot { border-color: rgba(0, 0, 0, 0.2); }
+.dw-light .dw-dot-done, .dw-light .dw-dot-today { border-color: #ff9f0a; }
+
+/* Quote / dev tip */
+.dw-quote { }
+.dw-quote-text { font-weight: 500; }
+.dw-quote-l { font-size: 17px; }
+.dw-quote-m { font-size: 15px; }
+.dw-quote-s { font-size: 13px; }
+.dw-quote-footer { font-size: 12px; padding-top: 4px; }
+
+/* Notes */
+.dw-notes-scroll { margin-top: 4px; }
+.dw-notes-entry {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    min-height: 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.92);
+    caret-color: #ff9f0a;
+    selection-background-color: rgba(255, 159, 10, 0.45);
+}
+.dw-notes-entry:focus { box-shadow: none; border: none; }
+.dw-light .dw-notes-entry { color: rgba(0, 0, 0, 0.92); }
+
+/* Clipboard */
+.dw-clip-rows { margin-top: 4px; }
+.dw-clip-row { font-size: 13px; padding: 3px 0; text-align: left; }
+.dw-clip-row:hover { color: #ff9f0a; }
+.dw-clip-row:active { color: #ffb340; }
+.dw-clip-empty { font-size: 13px; padding-top: 4px; }
+/* No negative margins anywhere in this file: St then measures the child
+   with a bogus width and it is drawn with zero size. */
+.dw-light .dw-clip-row:hover, .dw-light .dw-habits-name:hover { color: #c93400; }
+
+/* Markets */
+.dw-markets-rows { spacing: 5px; }
+.dw-markets-row { spacing: 10px; }
+.dw-markets-name { font-size: 14px; font-weight: 600; }
+.dw-markets-price { font-size: 14px; font-feature-settings: "tnum"; }
+.dw-markets-change { font-size: 13px; font-weight: 600; min-width: 62px; text-align: right; font-feature-settings: "tnum"; color: rgba(255, 255, 255, 0.55); }
+.dw-markets-footer { font-size: 11px; }
+.dw-gain { color: #30d158; }
+.dw-loss { color: #ff453a; }
+.dw-light .dw-markets-change { color: rgba(0, 0, 0, 0.55); }
+.dw-light .dw-gain { color: #248a3d; }
+.dw-light .dw-loss { color: #d70015; }
+
+.dw-stats-ring { width: 54px; height: 54px; }
+.dw-notes-entry .hint-text { color: rgba(255, 255, 255, 0.4); margin: 0; padding: 0; }
+.dw-light .dw-notes-entry .hint-text { color: rgba(0, 0, 0, 0.4); }
+
+.dw-quote-swap {
+    font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 10px;
+    color: rgba(255, 255, 255, 0.7); background-color: rgba(255, 255, 255, 0.10);
+}
+.dw-quote-swap:hover { background-color: rgba(255, 255, 255, 0.18); color: rgba(255, 255, 255, 0.92); }
+.dw-light .dw-quote-swap { color: rgba(0, 0, 0, 0.65); background-color: rgba(0, 0, 0, 0.07); }
+.dw-light .dw-quote-swap:hover { background-color: rgba(0, 0, 0, 0.13); color: rgba(0, 0, 0, 0.92); }
