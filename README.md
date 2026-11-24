@@ -12,7 +12,7 @@ A GNOME Shell extension for GNOME 50.
 | **Quote / Dev Tip** | One per day from a bundled list. A button flips between the two; click the text to copy it. |
 | **Markets** | Up to four stocks, indices or currency pairs with the day's change. |
 | **Habits** | Any three of your habits with the last seven days. Click today's dot to tick it. |
-| **Quick Notes** | One note that saves itself. |
+| **Quick Notes** | Your pinned note, editable in place. It scrolls with the cursor, and **Open** shows it in the Notes app. |
 | **Clipboard** | Your last four copies; click one to copy it again. |
 
 The cards sit on the desktop itself: below your windows, not in Alt-Tab, and
@@ -34,6 +34,18 @@ Opens from the app grid, or from the Habits card's menus.
 
 The app and the desktop card share one file and watch it, so a tick in one
 shows up in the other.
+
+## Notes
+
+Opens from the app grid ("Notes (Desk Widgets)"), or with **Open** on the Notes card.
+
+- A list of all your notes on the left, newest first, with search (Ctrl+F). Ctrl+N starts a new note.
+- The first line of a note is its title.
+- The pin button chooses which note the desktop card shows.
+- Delete moves a note to the Trash, so it can be restored from Files.
+- Each note is a plain text file, so you can also open, back up or sync them yourself.
+
+The app and the desktop card watch the same files, so an edit in one shows up in the other.
 
 ## Requirements
 
@@ -76,7 +88,7 @@ Your data files (below) are left in place; delete them by hand if you want.
 | What | Where |
 |---|---|
 | Habits | `~/.local/share/desk-widgets/habits.json` |
-| Notes | `~/.local/share/desk-widgets/notes.md` |
+| Notes | `~/.local/share/desk-widgets/notes/` (one `.md` file per note) |
 | Last market prices | `~/.cache/desk-widgets/` |
 | Clipboard history | memory only; never written to disk or logs |
 
@@ -93,8 +105,7 @@ Your data files (below) are left in place; delete them by hand if you want.
 - Primary monitor only. No resizing beyond the fixed card sizes.
 - On a small screen, cards that do not fit are not shown; hide others to make room.
 - A card is dragged by its body, not by its buttons or text box.
-- `notes.md` is read once at start-up: an edit made by hand while the
-  extension is running is overwritten by the next save from the card.
+- If the same note is edited on the card and in the app at the same moment, the later save wins.
 - A very large clipboard copy is read in full before it is cut to 10,000 characters.
 - The cards are not drawn in the overview, and may not take part in the
   workspace-switch animation.
@@ -114,7 +125,7 @@ make shelltest S=layout   # a scripted check in a separate headless GNOME Shell
 make nested               # a visible test shell (needs mutter-dev-bin)
 ```
 
-Scenarios: `layout visible stats habits quotenotes clipboard markets prefs scale leak faults habitapp look`.
+Scenarios: `layout visible stats habits quotenotes notesapp clipboard markets prefs scale leak faults habitapp look`.
 The test shell uses its own settings and data folders, so it cannot touch
 your real session. `lib/selftest.js` drives those scenarios and is not
 copied by `make install`.
@@ -127,7 +138,7 @@ Layout of the code:
 | `lib/layer.js`, `lib/widget.js` | The desktop layer and the shared card (drag, snap, menu) |
 | `lib/widgets/` | One file per widget |
 | `lib/logic/` | Pure logic with unit tests |
-| `app/habits.js` | The Habit Tracker (GTK 4 / libadwaita) |
+| `app/habits.js`, `app/notes.js` | The Habit Tracker and Notes apps (GTK 4 / libadwaita) |
 | `prefs.js` | The settings window |
 
 ### Add a widget

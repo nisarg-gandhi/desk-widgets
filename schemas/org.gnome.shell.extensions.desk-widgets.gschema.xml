@@ -23,6 +23,10 @@
     <key name="habit-names" type="as">
       <default>['Read','Workout','Code']</default>
     </key>
+    <key name="pinned-note" type="s">
+      <default>''</default>
+      <summary>Id of the note shown on the desktop Notes card (empty: the most recently edited)</summary>
+    </key>
     <key name="clipboard-enabled" type="b">
       <default>true</default>
     </key>

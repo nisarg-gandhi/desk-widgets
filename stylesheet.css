@@ -74,7 +74,6 @@
     border: none;
     box-shadow: none;
     padding: 0;
-    min-height: 0;
     font-size: 14px;
     color: rgba(255, 255, 255, 0.92);
     caret-color: #ff9f0a;
@@ -117,3 +116,7 @@
 .dw-quote-swap:hover { background-color: rgba(255, 255, 255, 0.18); color: rgba(255, 255, 255, 0.92); }
 .dw-light .dw-quote-swap { color: rgba(0, 0, 0, 0.65); background-color: rgba(0, 0, 0, 0.07); }
 .dw-light .dw-quote-swap:hover { background-color: rgba(0, 0, 0, 0.13); color: rgba(0, 0, 0, 0.92); }
+
+/* Notes card header: a layer above the note (see lib/widgets/notes.js). */
+.dw-notes-head { padding: 14px 16px 0 16px; height: 24px; }
+.dw-notes-head-space { height: 22px; }

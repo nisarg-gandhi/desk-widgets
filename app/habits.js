@@ -7,12 +7,12 @@ import GLib from 'gi://GLib';
 import Gtk from 'gi://Gtk?version=4.0';
 import Pango from 'gi://Pango';
 import System from 'system';
+import {loadSettings} from '../lib/appSettings.js';
 import {HabitFile} from '../lib/habitFile.js';
 import * as H from '../lib/logic/habitStats.js';
 import {streak} from '../lib/logic/streaks.js';
 
 const APP_ID = 'io.github.nisarg_gandhi.DeskWidgetsHabits';
-const SCHEMA = 'org.gnome.shell.extensions.desk-widgets';
 const ACCENT = [1, 0.624, 0.039];      // #ff9f0a, the widget's habit colour
 const CELL = 12;
 const GAP = 3;
@@ -34,19 +34,6 @@ const ERRORS = {
     long: `Keep it to ${H.MAX_NAME} characters or fewer.`,
     duplicate: 'You already have a habit with that name.',
 };
-
-// The extension's settings live in its own folder, next to this app.
-function loadSettings() {
-    const root = GLib.path_get_dirname(GLib.path_get_dirname(GLib.filename_from_uri(import.meta.url)[0]));
-    try {
-        const source = Gio.SettingsSchemaSource.new_from_directory(
-            `${root}/schemas`, Gio.SettingsSchemaSource.get_default(), false);
-        const schema = source.lookup(SCHEMA, false);
-        return schema ? new Gio.Settings({settings_schema: schema}) : null;
-    } catch {
-        return null;
-    }
-}
 
 class HabitWindow {
     constructor(app) {
